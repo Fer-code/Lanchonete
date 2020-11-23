@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class Produto extends AppCompatActivity {
 
     public final static String EXTRA_MESSAGE_VALOR = "com.example.restau.VALUE";
     public final static String EXTRA_MESSAGE = "com.example.restau.MENSAGEM";
     public final static String EXTRA_MESSAGE_PAGAMENTO = "com.example.restau.PAG";
+
+    DBHelper db = new DBHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +79,6 @@ public class Produto extends AppCompatActivity {
         }
 
 
-
         if(rdCartao.isChecked()){
             pagamento = "Cartão";
         }
@@ -85,13 +87,23 @@ public class Produto extends AppCompatActivity {
             valor = valor - (valor * 1/10);
         }
 
-        String total = String.valueOf(valor);
-        Intent intent = new Intent(this, Pagamento.class);
-        intent.putExtra(EXTRA_MESSAGE, gostos);
-        intent.putExtra(EXTRA_MESSAGE_VALOR, total);
-        intent.putExtra(EXTRA_MESSAGE_PAGAMENTO, pagamento);
-        startActivity(intent);
+       // Usuario usuario = new Usuario();
 
+        int teste = 1;//usuario.getCodigo();
+
+        String total1 = String.valueOf(valor);
+
+        if(total1.isEmpty() || gostos.isEmpty() || pagamento.isEmpty()){
+            Toast.makeText(this, "Escolha corretamente", Toast.LENGTH_SHORT).show();
+        }else{
+            db.addPedido(new Ped(valor, gostos, pagamento, teste ));
+
+            Intent intent = new Intent(this, Pagamento.class);
+            intent.putExtra(EXTRA_MESSAGE, gostos);
+            intent.putExtra(EXTRA_MESSAGE_VALOR, total1);
+            intent.putExtra(EXTRA_MESSAGE_PAGAMENTO, pagamento);
+            startActivity(intent);
+        }
 
     }
 

@@ -34,7 +34,6 @@ public class Local extends AppCompatActivity implements
 
     private Button btnmLocation;
     private TextView txtMLocation;
-    private EditText txtEnd;
     private static final String LASTADRESS_KEY = "adress";
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationCallback mLocationCallback;
@@ -62,7 +61,6 @@ public class Local extends AppCompatActivity implements
         if (savedInstanceState != null) {
             mTrackingLocation = savedInstanceState.getBoolean(
                     TRACKING_LOCATION_KEY);
-            txtEnd.setText(savedInstanceState.getString(ENDERECO));
         }
 
         btnmLocation.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +131,6 @@ public class Local extends AppCompatActivity implements
     protected void onSaveInstanceState(Bundle outState) {
         outState.putBoolean(TRACKING_LOCATION_KEY, mTrackingLocation);
         super.onSaveInstanceState(outState);
-        outState.putString(ENDERECO, txtEnd.getText().toString());
     }
 
 
@@ -182,18 +179,11 @@ public class Local extends AppCompatActivity implements
 
     }
     public void continuar(View continuar){
-         txtEnd = findViewById(R.id.textEnd);
         txtMLocation = findViewById(R.id.txtLocal);
 
-        String txtEnd1 = txtEnd.getText().toString();
         String txtLocal = txtMLocation.getText().toString();
 
-
-        if(txtEnd1.isEmpty() && txtLocal.isEmpty()){
-            Toast.makeText(this, "Precisa escolher uma das opções", Toast.LENGTH_SHORT).show();
-        }
-        else{
             Toast.makeText(this, "Endereço Registrado com sucesso estamos a caminho", Toast.LENGTH_SHORT).show();
-        }
+
     }
 }

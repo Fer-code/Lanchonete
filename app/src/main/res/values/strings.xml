@@ -2,8 +2,12 @@
     <string name="app_name">Lanchonete</string>
     <string name="bem_vindo">Bem Vindo!</string>
     <string name="cadastro">CADASTRO</string>
+    <string name="login">LOGIN</string>
     <string name="nome">Nome: </string>
     <string name="email">Email: </string>
+    <string name="tel">Telefone: </string>
+    <string name="senha">Senha: </string>
+    <string name="confSenha"> Confirmar Senha: </string>
     <string name="Salgados">Salgados: </string>
     <string name="bebidas">Bebidas: </string>
     <string name="doces">Doces: </string>
@@ -45,9 +49,15 @@
     <string name="invalid_lat_long_used">Coordenadas Inválidas</string>
     <string name="iniciar">Iniciar</string>
     <string name="buscar">Parar a Busca</string>
-
-
+    <string name="perfil">Perfil </string>
+    <string name="produtos">Produtos </string>
     <string name="ou">OU</string>
 
 
+    <string name="preferencia_armazenamento">Preferência Armazenamento</string>
+    <string name="efetuar_backup">Efetuar Backup</string>
+    <string name="excluir_backup">Excluir Backup</string>
+    <string name="armazenamento_externo">Armazenamento Externo</string>
+    <string name="backup">Backup</string>
+    <string name="local_armazenamento">Selecione o local de Preferência de armazenamento</string>
 </resources>

@@ -46,39 +46,18 @@
         android:layout_marginTop="5dp"
         app:fontFamily="@font/armata" />
 
-    <EditText
-        android:id="@+id/textEnd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="@string/endereco"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/ou"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:textSize="18sp" />
-
-
     <TextView
         android:id="@+id/txtLocal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
         android:textSize="18sp" />
 
     <Button
         android:id="@+id/btLocal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
         android:background="#FF003B"
         android:layout_gravity="center"
@@ -88,8 +67,8 @@
 
     <Button
         android:id="@+id/btPassar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:background="#FF003B"
@@ -97,7 +76,6 @@
         android:onClick="continuar"
         android:textColorHint="@color/common_google_signin_btn_text_dark_default"
         android:textSize="24sp" />
-
 
 </LinearLayout>
 
